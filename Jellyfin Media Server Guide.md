@@ -1,16 +1,16 @@
 # Setting Up Jellyfin Media Server
-Deep Grewal - January 4, 2022
+Deep Grewal - January 7, 2022
 
 ---
 
 ## My History with Media Centers
-Most of us have a seemingly rag-tag, motley collection of digital files that we have accumulated over the years.  These can range from our favorite movies, television series, etc.  The way that I used to organize these was to give them a proper file name (example: Borat.mp4) and put them into a folder titled "videos" or "movies", and that was it.  
+Most of us have a seemingly rag-tag, motley collection of digital files that we have accumulated over the years.  These can range from our favorite movies, television series, etc.  The way that I used to organize these was to give them a proper file name (example: "Borat.mp4") and put them into a folder titled "videos" or "movies", and that was it.  
 
 Then one day, over a decade ago, I discovered that I could convert my first-generation Xbox gaming console into a media center with the Xbox Media Center (XBMC) project.  This worked beautifully, if you had the guts to make some modifications to a perfrectly good Xbox.  However, it was short-lived because the first-generation Xbox consoles could not display/output high definition video.  
 
-A few years later, I switched to Kodi (a fork/continuation of XBMC).  I was a bit disappointed to see that the UI, settings, and configuration options were not improved upon and still seemed scattered about as they had been in XBMC.  Preparing this device for non-technical users was out of the question.  I wasn't going to get the buy-in from other family members with this.  It simply sat around installed and functional on a laptop whose video output was never switched to on the TV.
+A few years later, I switched to Kodi (a fork/continuation of XBMC).  I was a bit disappointed to see that the UI, settings, and configuration options were not improved upon and still seemed scattered about as they had been in XBMC.  Preparing this device for non-technical users was out of the question.  I wasn't going to get the buy-in from other family members with this.  It simply sat around installed and functional on a laptop whose video output was never switched to on the television.
 
-By this point, some of you are probably thinking, what about Plex?  Plex is not open source and this is a deal breaker for me, especially considering my collection of media files and the way some of these files were acquired.  Besides, if there are open source alternatives available, why not be a good FOSS citizen and support an open source project?
+By this point, some of you are probably thinking, what about Plex?  Plex is not open source and this is a deal-breaker for me, especially considering my collection of media files and the way some of these files were acquired.  Besides, if there are open source alternatives available, why not be a good FOSS citizen and support an open source project?
 
 &nbsp;  
 ## Along Came Jellyfin
@@ -30,7 +30,7 @@ Surprisingly, these metrics are more than enough to run Jellyfin server with mul
 
 &nbsp;  
 ## The Operating System for Jellyfin Server
-To help  narrow down the selection and make a decision on an ideal Linux distribution, I referred back to an [article](https://frontpagelinux.com/articles/lightweight-linux-distro-review-showdown-who-will-become-champion/) that I previously wrote about lightweight Linux distros.  For some reason, I wanted the distro to have some eye candy to it.  I was quite certain that I would be showing it off to friends and family, so it might as well look appealing.  The first instinct was to go with Zorin OS Lite, but I was already using this distro for a custom OSINT box and decided to go with Linux Lite instead. 
+To help  narrow down the selection and make a decision on an ideal Linux distribution, I referred back to an [article](https://frontpagelinux.com/articles/lightweight-linux-distro-review-showdown-who-will-become-champion/) that I previously wrote about lightweight Linux distros.  For this project, I wanted the distro to have some eye candy to it.  I was quite certain that I would be showing it off to friends and family, so it might as well look appealing.  The first instinct was to go with Zorin OS Lite, but I was already using this distro for a custom OSINT box and decided to go with Linux Lite instead. 
 
 Linux Lite is based on Ubuntu and doesn't have any deviations from Ubuntu which would interfere with the installation of Jellyfin server.  Once Linux Lite is installed, the distro idles with the following metrics.
 
@@ -47,7 +47,7 @@ I also like the canned wallappers that come with Linux Lite.  My favorite, of co
 
 ---
 ## Pre-Installation Recommendations
-The following set of steps are obviously not necessary, but will optimize and add some noticeable luxuries to a Jellyfin server setup.
+With the hardware and operating system squared away, let's consider some ease-of-use options that can be implemented to make this setup a little more spectacular.  The following set of steps are obviously not necessary, but will optimize and add some noticeable luxuries to a Jellyfin server setup.
 
 ### Adjust Power Settings
 As mentioned, I used a laptop to be my Jellyfin server. This laptop has a video output that is connected to a television.  I don't need to leave the lid open and would prefer that the lid stayed shut while the laptop remained powered on 24/7, much like a server.  To accomplish this, power settings had to be tweaked.
@@ -59,7 +59,7 @@ As mentioned, I used a laptop to be my Jellyfin server. This laptop has a video 
 ![power3](images/power3.png)
 
 ### Update and Simplify 
-One of the first things that I do after installing a fresh distro is to apply updates and perform any clean-up that might be necessary.
+One of the first things that I do after installing a fresh distro is to apply updates and perform any clean up that might be necessary.
 
 ```
 sudo apt update
@@ -82,7 +82,7 @@ sudo sh bin/update.sh
 ```
 
 ### Install KDE Connect
-With the lid of the laptop closed, there is no access to the keyboard or touchpad.  This seems problematic at first, unless you have heard of KDE Connect.  KDE connect allows for a mobile device to act as a keyboard and mouse for a host machine.  But that's not all.  KDE connect also allows for a simple and direct transfer of any files that may be stored on a mobile device to the host machine.  So, any media files which are located on the mobile device can now be transferred to the Jellyfin server machine wirelessly, without fiddling with USB settings and dongles.
+With the lid of the laptop closed, there is no access to the keyboard or touchpad.  This seems problematic at first, unless you have heard of KDE Connect.  KDE Connect allows for a mobile device to act as a keyboard and mouse for a host machine.  But that's not all: KDE Connect also allows for a simple and direct transfer of any files that may be stored on a mobile device to the host machine.  So, any media files which are located on the mobile device can now be transferred to the Jellyfin server machine wirelessly, without fiddling with USB settings and dongles.
 
 ```
 sudo apt install kdeconnect
@@ -96,10 +96,10 @@ An icon with a "K" on it appeared in the bottom panel to the left of the clock.
 
 ![kdeconnect icon](images/kdeconnect_icon.png)
 
-To complete the setup, the "KDE Connect" application wsa installed on my spare mobile device.  With the mobile device connected to the same wi-fi SSID as the Jellyfin server machine, pairing of the devices was completed.
+To complete the setup, the "KDE Connect" application was installed on my spare mobile device which happens to be a Motorolo Moto G7 running LineageOS 18.  With the mobile device connected to the same wi-fi SSID as the Jellyfin server machine, pairing of the devices was completed.
 
 ### Install SSH Server
-Installing the openssh-server package allows for `ssh` and `scp` commands to be performed against the server.  This comes in handy when you need to quickly perform updates or copy/move media files to or from the server.  
+Installing the openssh-server package allows for `ssh` and `scp` commands to be performed against the server.  This comes in handy when you need to quickly perform updates or copy/move media files to or from the Jellyfin server.  
 
 ```
 sudo apt openssh-server
@@ -127,7 +127,7 @@ Test the changes by launching the terminal.  The banner should now be gone.
 ![nobanner](images/nobanner.png)
 
 ### Assign a Static IP Address
-The Jellyfin server is just that, a server.  Client machines must connect to this server to consume the media being served.  To make things easy and future-proof, I went to the UI of my router and ensured that the Jellyfin server machine was assigned a static IP address.  
+The Jellyfin server is just that, a server.  Client machines must connect to this server to consume the media being served.  To make things easy and a little more fool-proof, I went to the UI of my router and ensured that the Jellyfin server machine was assigned a static IP address.  
 
 ---
 ## Install Jellyfin Server
@@ -151,7 +151,7 @@ systemctl status jellyfin
 
 ---
 ## Configure Jellyfin Server
-With everything in place and a running Jellyfin server. I opened up the FireFox webrowser and navigated to `http://localhost:8096` to access the Jellyfin server web-based UI.
+With everything in place and a running Jellyfin server. I opened up the Firefox webrowser and navigated to `http://localhost:8096` to access the Jellyfin server web-based UI.
 
 The initial screen just wants to know which preferred language to use.
 
@@ -169,7 +169,7 @@ For the subsequent screens, the default options sufficed and clicking the "Next"
 
 ---
 ### Connect Jellyfin Clients
-One of the "selling points" for Jellyfin, was the broad ecosystem.  Jellyfin offers a growing list of [clients](https://jellyfin.org/clients/) for a variety of device types.  The most notable are listed below.
+One of the "selling points" for Jellyfin, is the broad ecosystem.  Jellyfin offers a growing list of [clients](https://jellyfin.org/clients/) for a variety of device types.  The most notable are listed below.
 
 * Android
 * Fire TV
@@ -202,7 +202,7 @@ The next few screenshots are my favorites.  They really exhibit the awesomeness 
 
 Here we can see that the film "Borat" has been properly tagged with all of the available metadata (reviews, cast, synopsis, rating, etc.).  
 
-"Great sucess!"
+"Great success!"
 
 ![android6](images/android6.png)
 
@@ -216,4 +216,4 @@ The metadata isn't just limited to the films themselves, but is also obtained an
 
 ---
 ## Conclusion
-Jellyfin has been revolutionary for my media collection, my home, and my family.  It is the the most prolific open source project we have collectively come across in 2021.  Before, we would have to use a Linux PC/laptop and connect to a shared drive to access media saved on a NAS (nobody did this).  Now, this is no longer necessary.  One old laptop and one old Android phone that were about to be e-recycled have been repurposed to perform their greatest feat of all time: Jellyfin server and input control for Jellyfin server (respectively).  Every television in the house either runs Roku natively or has a Roku device connected to it with the native Roku Jellyfin client app.  This makes it very convenient to browse content and watch a film from the comfort of the couch using a remote control and surround sound.  
+Jellyfin has been revolutionary for my media collection, my home, and my family's media consumption methods.  It is the the most prolific open source project we have collectively come across in 2021.  Before, we would have to use a Linux PC/laptop and connect to a shared drive to access media saved on a NAS (nobody did this).  Now, this is no longer necessary.  One old laptop and one old Android phone that were about to be e-recycled have been repurposed to perform their greatest feat of all time: Jellyfin server and input control for Jellyfin server (respectively).  Every television in the house either runs Roku natively or has a Roku device connected to it with the native Roku Jellyfin client app.  This makes it very convenient to browse content and watch a film from the comfort of the couch using a remote control and surround sound.  
